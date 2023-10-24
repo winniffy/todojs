@@ -136,6 +136,8 @@ header {
     padding: 2rem;
     gap: 6rem;
     margin-top: 3rem;
+
+    transition: all .2s ease-in-out;
 }
 
 .todo_item-left {
@@ -153,6 +155,14 @@ header {
 i {
     font-size: 2rem;
     cursor: pointer;
+}
+
+.check {
+    color: #24FF00;
+}
+
+.strike {
+    text-decoration: line-through;
 }
 
 .edit {

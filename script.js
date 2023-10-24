@@ -45,9 +45,8 @@ createTodo.addEventListener('click', function(e) {
     const todoItemHTML = `
         <div class="todo_item">
             <div class="todo_item-left">
-                <i class="fa-solid fa-square-check"></i>
-                <!-- <i class="fa-regular fa-square-check"></i> -->
-                <p class="text1">${todoInput}</p>
+                <i class="fa-solid fa-square-check checkTodo"></i>
+                <p class="text1 todo_input">${todoInput}</p>
             </div>
             <div class="todo_item-right">
                 <i class="fa-regular fa-pen-to-square edit"></i>
@@ -60,7 +59,7 @@ createTodo.addEventListener('click', function(e) {
     document.querySelector('form').reset();
     closeModal();
 
-})
+});
 
 // delete todo item
 todoList.addEventListener('click', function(e){
@@ -70,6 +69,33 @@ todoList.addEventListener('click', function(e){
             todoItem.remove();   
         }
     }
-})
+});
 
+// check todo item
+todoList.addEventListener('click', function(e) {
+    if (e.target.classList.contains('checkTodo')) {
+        e.target.classList.toggle('check');
 
+        // add strikethrough
+        const todoStrike = e.target.closest('.todo_item').querySelectorAll('.todo_input');
+        if (todoStrike) {
+            todoStrike.classList.toggle('strike');
+        }
+        
+    }
+});
+
+// const todoInputText = document.querySelectorAll('.todo_input');
+
+        // for (let i = 0; i < todoInputText.length; i++) {
+        //     // if (!todoInputText[i].classList.contains('strike')) {
+        //     //     console.log(todoInputText[i]);
+        //     //     todoInputText[i].classList.toggle('strike');
+        //     // }
+        //     console.log(todoInputText)
+        // }
+
+        // if (e.target.classList.contains('.todo_input')) {
+        //     console.log("check")
+        //     e.classList.toggle('strike')
+        // }
