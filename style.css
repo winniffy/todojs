@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*, *::after, *::before { box-sizing: border-box; padding: 0;}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0E1F09;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.container {
+    /* max-width: 1440px; */
+    padding: 8.5rem 0 1rem;
+    margin: 0 auto;
+    width: 90%;
+    /* border: 2px solid white; */
+}
+
+h1, h2, h3, h4, p, input { margin: 0; font-family: inherit; }
+
+main {
+    height: 100vh;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    padding: 2rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #89BE7C;
+}
+
+.text1 {
+    font-size: 1.8rem;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.todo-container {
+    margin: 0 auto;
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 800;
+    color: #0E1F09;
+    outline: none;
+    border: none;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #89BE7C;
+}
+
+.hey {
+    margin-top: 3rem;
+    font-weight: 500;
+}
+
+.create {
+    margin-top: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* todo modal  */
+.todo_modal {
+    position: absolute;
+    top: 30%;
+    padding: 0 0 3rem;
+    border-radius: 0.9375rem;
+    background: rgba(137, 190, 124, 0.40);
+    backdrop-filter: blur(3rem);
+    display: grid;
+    place-items: center;
+
+    /* transition: all .2s ease-in-out; */
+}
+
+.todo_modal-divider {
+    border-bottom: 1px solid #fff;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    text-align: right;
+}
+
+.todo_modal-input {
+    min-width: 50rem;
+    margin: 4rem 2rem 2rem;
+    padding: 2rem 1rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 4px 4px 40px 7px rgba(0, 0, 0, 0.15);
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.todo_modal-create {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+}
+
+.todo_list {
+    margin-top: 5rem;
+}
+
+.todo_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #89BE7C;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 6rem;
+}
+
+.todo_item-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.todo_item-right {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.edit {
+    color: #CCFFBF;
+}
+
+.delete {
+    color: #FF6C6C;
+}
+
+
+
+
+
+
+.hidden{
+    display: none;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0 auto;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+
+
+
+.modal {
+    width: 100rem;
+    height: 30rem;
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    background-color: #89BE7C;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.modal-text {
+    font-size: 2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.closeModal{
+    font-size: 35px;
+    cursor: pointer;
+}
