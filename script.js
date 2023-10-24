@@ -1,23 +1,3 @@
-//using javascript to manipulate classes
-//manipulation of css styles
-
-// const showModalButton = document.querySelectorAll(".btn");
-// const modal = document.querySelector(".modal");
-// const closeModal = document.querySelector(".closeModal");
-// 
-
-// for(let i = 0; i < showModalButton.length; i++){
-//     showModalButton[i].addEventListener('click', function(){
-//         modal.classList.remove('hidden')
-//         body.style.backgroundColor = 'red'
-
-//     })
-// };
-
-// closeModal.addEventListener('click', function() {
-//     modal.classList.add('hidden')
-// })
-
 const body = document.querySelector('body');
 const showModalBtn = document.querySelector('.create');
 const modal = document.querySelector('.todo_modal');
@@ -53,15 +33,14 @@ document.addEventListener('keydown', escapeKey);
 
 
 const createTodo = document.querySelector('.todo_modal-create');
-const todoItem = document.querySelector('.todo_item');
 const todoList = document.querySelector('.todo_list');
 const form = document.querySelector('form');
 
 
+// create todo item
 createTodo.addEventListener('click', function(e) {
     e.preventDefault();
 
-    
     const todoInput = document.querySelector('.todo_modal-input').value;
     const todoItemHTML = `
         <div class="todo_item">
@@ -77,21 +56,20 @@ createTodo.addEventListener('click', function(e) {
         </div>
     `;
 
-    todoList.insertAdjacentHTML('beforebegin', todoItemHTML);
+    todoList.insertAdjacentHTML('beforeend', todoItemHTML);
     document.querySelector('form').reset();
-
+    closeModal();
 
 })
 
+// delete todo item
+todoList.addEventListener('click', function(e){
+    if (e.target.classList.contains('delete')) {
+        const todoItem = e.target.closest('.todo_item');
+        if (todoItem) {
+            todoItem.remove();   
+        }
+    }
+})
 
-
-
-
-
-
-
-
-// deleteBtn.addEventListener("click", function(){
-//     todo.childNodes.remove()
-// })
 

@@ -124,7 +124,7 @@ header {
 }
 
 .todo_list {
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .todo_item {
@@ -135,6 +135,7 @@ header {
     border-radius: 1rem;
     padding: 2rem;
     gap: 6rem;
+    margin-top: 3rem;
 }
 
 .todo_item-left {
