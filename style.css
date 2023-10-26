@@ -86,7 +86,8 @@ header {
 }
 
 /* todo modal  */
-.todo_modal {
+.todo_modal,
+.edit_modal {
     position: absolute;
     top: 30%;
     padding: 0 0 3rem;
@@ -106,7 +107,8 @@ header {
     text-align: right;
 }
 
-.todo_modal-input {
+.todo_modal-input,
+.edit_modal-input {
     min-width: 50rem;
     margin: 4rem 2rem 2rem;
     padding: 2rem 1rem;
@@ -118,7 +120,8 @@ header {
     text-align: center;
 }
 
-.todo_modal-create {
+.todo_modal-create,
+.edit_modal-create {
     font-size: 1.5rem;
     margin-top: 3rem;
 }

@@ -32,12 +32,11 @@ document.addEventListener('keydown', escapeKey);
 
 
 
+// create todo item
 const createTodo = document.querySelector('.todo_modal-create');
 const todoList = document.querySelector('.todo_list');
-const form = document.querySelector('form');
+// const form = document.querySelector('form');
 
-
-// create todo item
 createTodo.addEventListener('click', function(e) {
     e.preventDefault();
 
@@ -46,7 +45,7 @@ createTodo.addEventListener('click', function(e) {
         <div class="todo_item">
             <div class="todo_item-left">
                 <i class="fa-solid fa-square-check checkTodo"></i>
-                <p class="text1 todo_input">${todoInput}</p>
+                <p class="text1 todo_input" contenteditable="false">${todoInput}</p>
             </div>
             <div class="todo_item-right">
                 <i class="fa-regular fa-pen-to-square edit"></i>
@@ -56,9 +55,8 @@ createTodo.addEventListener('click', function(e) {
     `;
 
     todoList.insertAdjacentHTML('beforeend', todoItemHTML);
-    document.querySelector('form').reset();
+    modal.reset();
     closeModal();
-
 });
 
 // delete todo item
@@ -77,7 +75,7 @@ todoList.addEventListener('click', function(e) {
         e.target.classList.toggle('check');
 
         // add strikethrough
-        const todoStrike = e.target.closest('.todo_item').querySelectorAll('.todo_input');
+        const todoStrike = e.target.closest('.todo_item').querySelector('.todo_input');
         if (todoStrike) {
             todoStrike.classList.toggle('strike');
         }
@@ -85,17 +83,75 @@ todoList.addEventListener('click', function(e) {
     }
 });
 
-// const todoInputText = document.querySelectorAll('.todo_input');
 
-        // for (let i = 0; i < todoInputText.length; i++) {
-        //     // if (!todoInputText[i].classList.contains('strike')) {
-        //     //     console.log(todoInputText[i]);
-        //     //     todoInputText[i].classList.toggle('strike');
-        //     // }
-        //     console.log(todoInputText)
-        // }
+// edit ==================================================================
 
-        // if (e.target.classList.contains('.todo_input')) {
-        //     console.log("check")
-        //     e.classList.toggle('strike')
-        // }
+const editModal = document.querySelector('.edit_modal');
+const editTodoBtn = document.querySelector('.edit_modal-create');
+const closeEditBtn = document.querySelector('.close-edit');
+
+// hide edit modal on load
+editModal.classList.add('hidden');
+
+// show edit modal function
+function showEditModal() {
+    editModal.classList.remove('hidden');
+}
+
+// close edit modal function
+function closeEditModal() {
+    editModal.classList.add('hidden');
+}
+
+closeEditBtn.addEventListener('click', closeEditModal);
+document.addEventListener('keydown', escapeKey);
+
+// edit todo item
+todoList.addEventListener('click', function(e){
+    if (e.target.classList.contains('edit')) {
+        
+        const todoEdit = e.target.closest('.todo_item').querySelector('.edit');
+        if (todoEdit) {
+            const todoInput = e.target.closest('.todo_item').querySelector('.todo_input');
+            const todoItemContainer = e.target.closest('.todo_item');
+
+            // toggle contenteditable
+            if (todoInput.contentEditable === "false") {
+                // e.target.closest('.todo_item').style.border = "2px solid red;"
+                console.log(todoItemContainer)
+                todoInput.contentEditable = "true"
+            }  else if (todoInput.contentEditable === "true") {
+                todoInput.contentEditable = "false"
+            }
+
+            // todoInput.classList.toggle('contenteditable');
+
+            // let editValue = document.querySelector('.edit_modal-input').value;
+            // todoInput.textContent = editValue;
+
+            // showEditModal(e);
+        }
+    }
+});
+
+
+// editTodoBtn.addEventListener('click', function(e) {
+//     e.preventDefault();
+
+//     // let editValue = document.querySelector('.edit_modal-input').value;
+//     // todoInput.textContent = editValue;
+
+//     if (e.target.classList.contains('edit_modal-create')) {
+        
+//         const todoEdit = e.target.closest('.edit_modal').querySelector('.edit_modal-create');
+//         if (todoEdit) {
+//             // const todoInput = e.target.closest('.todo_item').querySelector('.todo_input');
+//             // console.log(todoInput.textContent);
+
+//             let editValue = document.querySelector('.edit_modal-input').value;
+//             todoInput.textContent = editValue;
+
+//             closeEditModal(e);
+//         }
+//     }
+// });
