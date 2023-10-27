@@ -94,6 +94,7 @@ header {
     border-radius: 0.9375rem;
     background: rgba(137, 190, 124, 0.40);
     backdrop-filter: blur(3rem);
+    -webkit-backdrop-filter: blur(3rem);
     display: grid;
     place-items: center;
 
@@ -216,4 +217,12 @@ i {
 .closeModal{
     font-size: 35px;
     cursor: pointer;
+}
+
+
+/* mobile responsiveness */
+@media (max-width: 768px){
+    .todo_modal-input {
+        min-width: 25rem;
+    }
 }
