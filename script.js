@@ -54,7 +54,9 @@ createTodo.addEventListener('click', function(e) {
         </div>
     `;
 
-    todoList.insertAdjacentHTML('beforeend', todoItemHTML);
+    if(todoInput !== '') {
+        todoList.insertAdjacentHTML('beforeend', todoItemHTML);
+    }
     modal.reset();
     closeModal();
 });
