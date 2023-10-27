@@ -117,11 +117,12 @@ todoList.addEventListener('click', function(e){
 
             // toggle contenteditable
             if (todoInput.contentEditable === "false") {
-                // e.target.closest('.todo_item').style.border = "2px solid red;"
                 console.log(todoItemContainer)
                 todoInput.contentEditable = "true"
+                todoItemContainer.style.border = "2px solid #ff0000"
             }  else if (todoInput.contentEditable === "true") {
                 todoInput.contentEditable = "false"
+                todoItemContainer.style.border = "2px solid #89BE7C"
             }
 
             // todoInput.classList.toggle('contenteditable');
